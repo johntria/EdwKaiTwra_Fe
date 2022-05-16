@@ -1,27 +1,91 @@
-# EdwKaiTwraWeb
+# Sass Architecture Structure
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+```
+sass/
+|
+|– base/
+|   |– _base-dir.scss    # Include all base files 
+|   |– _reset.scss       # Reset/normalize
+|   |– _typography.scss  # Typography rules
+|   ...                  # Etc…
+|
+|– components/
+|   |– components-dir.scss    # Include all components files 
+|   |– _buttons.scss     # Buttons
+|   |– _carousel.scss    # Carousel
+|   |– _cover.scss       # Cover
+|   |– _dropdown.scss    # Dropdown
+|   ...                  # Etc…
+|
+|– layout/
+|   |– layout-dir.scss    # Include all base files 
+|   |– _navigation.scss  # Navigation
+|   |– _grid.scss        # Grid system
+|   |– _header.scss      # Header
+|   |– _footer.scss      # Footer
+|   |– _sidebar.scss     # Sidebar
+|   |– _forms.scss       # Forms
+|   ...                  # Etc…
+|
+|– pages/
+|   |– pages-dir.scss    # Include all pages files 
+|   |– _home.scss        # Home specific styles
+|   |– _contact.scss     # Contact specific styles
+|   ...                  # Etc…
+|
+|– sass-utils/
+|   |– sass-utils-dir.scss    # Include all sass-utils files
+|   |– _variables.scss   # Sass Variables
+|   |– _functions.scss   # Sass Functions
+|   |– _mixins.scss      # Sass Mixins
+|   |– _helpers.scss     # Class & placeholders helpers
+|
+|
+|
+`– style.scss            # Primary Sass file
+```
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### BASE FOLDER
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The `base/` folder holds what we might call the boilerplate code for the project. In there, you might find the reset file, some typographic rules, and probably a stylesheet, defining some standard styles for commonly used HTML elements.
 
-## Build
+### COMPONENTS FOLDER
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+For smaller components, there is the `components/` folder. While `layout/` is macro (defining the global wireframe), `components/` is more focused on widgets. It contains all kind of specific modules like a slider, a loader, a widget, and basically anything along those lines. There are usually a lot of files in `components/` since the whole site/application should be mostly composed of tiny modules.
 
-## Running unit tests
+### LAYOUT FOLDER
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The `layout/` folder contains everything that takes part in laying out the site or application. This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar…), the grid system or even CSS styles for all the forms.
 
-## Running end-to-end tests
+### PAGES FOLDER
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+If you have page-specific styles, it is better to put them in a `pages/` folder, in a file named after the page. For instance, it’s not uncommon to have very specific styles for the home page hence the need for a `_home.scss` file in `pages/`.
 
-## Further help
+### SASS-UTILS FOLDER
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The `sass-utils/` folder gathers all Sass tools and helpers used across the project. Every global variable, function, mixin and placeholder should be put in here.
+
+The rule of thumb for this folder is that it should not output a single line of CSS when compiled on its own. These are nothing but Sass helpers.
+
+### VENDORS FOLDER
+
+And last but not least, most projects will have a `vendors/` folder containing all the CSS files from external libraries and frameworks – Normalize, Bootstrap, jQueryUI, FancyCarouselSliderjQueryPowered, and so on. Putting those aside in the same folder is a good way to say “Hey, this is not from me, not my code, not my responsibility”.
+
+If you have to override a section of any vendor, I recommend you have an 8th folder called `vendors-extensions/` in which you may have files named exactly after the vendors they overwrite.
+
+For instance, `vendors-extensions/_boostrap.scss` is a file containing all CSS rules intended to re-declare some of Bootstrap’s default CSS. This is to avoid editing the vendor files themselves, which is generally not a good idea.
+
+### STYLE FILE
+
+The style file should be the only Sass file from the whole code base not to begin with an underscore. This file should not contain anything but `@import` and comments.
+
+Files should be imported according to the folder they live in, one after the other in the following order:
+
+1. `sass-utils/`
+2. `vendors/`
+3. `base/`
+4. `layout/`
+5. `components/`
+6. `pages/`
