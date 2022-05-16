@@ -1,0 +1,31 @@
+.grid-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .sub-container {
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+        justify-content: center;
+        .grid-item-left-ads {
+            // grid-area: left-ads;
+            border: 2px solid pink;
+        }
+        .grid-body-75-percentage {
+            // grid-area: body;
+        }
+        .grid-item-right-ads {
+            // grid-area: right-ads;
+            border: 2px solid purple;
+        }
+    }
+    .grid-item-header {
+        // grid-area: header;
+        border: 2px solid blue;
+    }
+
+    .grid-item-footer {
+        margin-top: auto;
+        border: 2px solid green;
+    }
+}

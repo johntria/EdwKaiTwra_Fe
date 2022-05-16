@@ -4,10 +4,12 @@ import { LoggerModule, NgxLoggerLevel } from "ngx-logger";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from 'src/shared/modules/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,6 +20,8 @@ import { AppComponent } from './app.component';
       level: NgxLoggerLevel.DEBUG,
       serverLogLevel: NgxLoggerLevel.ERROR
     }),
+    SharedModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
