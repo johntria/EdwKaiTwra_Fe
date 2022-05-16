@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import "/src/shared/styles/base/base-dir";
+@import "/src/shared/styles/components/components-dir";
+@import "/src/shared/styles/layout/layout-dir";
+@import "/src/shared/styles/pages/pages-dir";
+@import "/src/shared/styles/sass-utils/sass-utils-dir";
+@import "/src/shared/styles/vendors/vendors-dir";
