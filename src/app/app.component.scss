@@ -1,30 +1,32 @@
-.grid-container {
+.flex-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 
     .sub-container {
         display: grid;
-        grid-template-columns: 15% 70% 15%;
-        justify-content: center;
-        .grid-item-left-ads {
-            // grid-area: left-ads;
+        grid-template-columns: minmax(min-content, 300px) 1fr minmax(min-content, 300px);
+        grid-template-areas: "left-ads body right-ads";
+
+        .sub-item-left-ads {
+            grid-area: left-ads;
+            margin-inline: auto;
             border: 2px solid pink;
         }
-        .grid-body-75-percentage {
-            // grid-area: body;
+        .sub-item-body {
+            grid-area: body;
         }
-        .grid-item-right-ads {
-            // grid-area: right-ads;
+        .sub-item-right-ads {
+            grid-area: right-ads;
+            margin-inline: auto;
             border: 2px solid purple;
         }
     }
-    .grid-item-header {
-        // grid-area: header;
+    .flex-item-header {
         border: 2px solid blue;
     }
 
-    .grid-item-footer {
+    .flex-item-footer {
         margin-top: auto;
         border: 2px solid green;
     }
