@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { FootersModule } from 'src/app/features/footer/footer.module';
+import { HeadersModule } from 'src/app/features/header/header.module';
 
 
 @NgModule({
@@ -10,6 +12,8 @@ import { HomeComponent } from './home.component';
     HomeComponent
   ],
   imports: [
+    FootersModule,
+    HeadersModule,
     CommonModule,
     HomeRoutingModule
   ]
