@@ -1,0 +1,12 @@
+.sticky-p-toast {
+    .p-toast-message-success {
+        background: var(--ligt-blue) !important;
+        border: solid var(--dark-blue) !important;
+        border-width: 0px 0px 0px 6px !important;
+        color: var(--dark-blue) !important;
+    }
+}
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon,
+.p-toast .p-toast-message.p-toast-message-success .p-toast-icon-close {
+    color: var(--dark-blue) !important;
+}
