@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '@environment/environment.local';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -7,9 +8,7 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Εδώ και τώρα τρέχει ';
   constructor(private primengConfig: PrimeNGConfig) { }
-
   ngOnInit() {
     this.primengConfig.ripple = true;
   }
