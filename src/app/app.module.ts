@@ -8,8 +8,6 @@ import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { CoreModule } from './core/core.module';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CorsInterceptor } from '@core/interceptors/cors.interceptor';
-
 
 
 @NgModule({
@@ -32,11 +30,7 @@ import { CorsInterceptor } from '@core/interceptors/cors.interceptor';
   ],
   providers: [
     MessageService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: CorsInterceptor,
-      multi: true
-    }],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
