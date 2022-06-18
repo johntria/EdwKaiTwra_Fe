@@ -1,5 +1,6 @@
 # SASS GUIDELINES 
  Before you write a line of code in styles I higly recommend read this [article](https://sass-guidelin.es/el/)
+ </br>
  Before you write a line of code in Angular I highly recommend read this [article](https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d) due to understand our project structure 
 
 # Sass Architecture Structure
