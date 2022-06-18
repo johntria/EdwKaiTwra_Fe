@@ -1,0 +1,13 @@
+<form *ngIf="this.form" [formGroup]="form" (submit)="submitForm">
+    <label>Username</label>
+    <input type="text" name="username" formControlName="username">
+
+    <label>Password</label>
+    <input type="password" name="password" formControlName="password">
+
+    <button type="submit">Login</button>
+
+
+</form>
+
+{{ form!.value | json }}

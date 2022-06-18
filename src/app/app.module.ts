@@ -28,8 +28,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     CoreModule
   ],
+  exports: [
+    SharedModule,
+    CoreModule
+  ],
   providers: [
     MessageService,
+
   ],
   bootstrap: [AppComponent]
 })
