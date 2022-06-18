@@ -1,5 +1,7 @@
 # SASS GUIDELINES 
  Before you write a line of code in styles I higly recommend read this [article](https://sass-guidelin.es/el/)
+ Before you write a line of code in Angular I highly recommend read this [article](https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d) due to understand our project structure 
+
 # Sass Architecture Structure
 
 ```
@@ -91,3 +93,5 @@ Files should be imported according to the folder they live in, one after the oth
 4. `layout/`
 5. `components/`
 6. `pages/`
+
+
