@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '@environment/environment.local';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({

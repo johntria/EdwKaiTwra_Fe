@@ -1,6 +1,6 @@
 # SASS GUIDELINES 
- Before you write a line of code in styles I higly recommend read this [article](https://sass-guidelin.es/el/)
- </br>
+ Before you write a line of code in styles I highly recommend read this [article](https://sass-guidelin.es/el/)
+</br>
  Before you write a line of code in Angular I highly recommend read this [article](https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d) due to understand our project structure 
 
 # Sass Architecture Structure
@@ -94,5 +94,41 @@ Files should be imported according to the folder they live in, one after the oth
 4. `layout/`
 5. `components/`
 6. `pages/`
+
+
+### Toast Messages
+We implemented the toast messages with [NgPrime Toast](https://www.primefaces.org/primeng/toast).
+
+
+The main difference between our implementation and NgPrime Toast is that we added some rules and custom styles.
+
+
+
+If we want to use our toast service we have to inject it in our constructor and take the decision which one message we want to display.
+
+
+
+The total options which we can find is four:
+
+
+
+a)success 
+
+
+
+b)info
+
+
+
+c)warn
+
+
+
+d)error
+
+
+
+
+We have to match the severity and key with the same option. For example this.messageService.add({severity:'success', key:"success" , summary:'Monkey ', detail:'You look like a monkey :) '});
 
 
