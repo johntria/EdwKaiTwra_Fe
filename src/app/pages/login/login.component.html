@@ -1,9 +1,9 @@
-<form *ngIf="this.form" [formGroup]="form" (submit)="submitForm">
+<form *ngIf="this.form" [formGroup]="form" (ngSubmit)="submitForm()">
     <label>E-mail</label>
     <input type="email" formControlName="email" email required>
 
     <label>Password</label>
     <input type="password" formControlName="password" required>
 
-    <button type="submit" [disabled]="form.valid==true">Login</button>
+    <button type="submit" [disabled]="!form.valid">Login</button>
 </form>
