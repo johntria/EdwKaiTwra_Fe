@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Tokens } from '@core/models/tokens';
 import { AuthService } from '@core/services/auth.service';
 import { MessageService } from 'primeng/api';
@@ -10,7 +10,7 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   constructor(private authService: AuthService, private messageService: MessageService) { }
 
   ngOnInit(): void {
@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   }
 
   initializeForm() {
-    this.form = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl('')
+    this.form = new UntypedFormGroup({
+      email: new UntypedFormControl(''),
+      password: new UntypedFormControl('')
     });
   }
 
