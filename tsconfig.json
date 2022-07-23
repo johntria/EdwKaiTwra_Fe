@@ -1,7 +1,8 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
+    "watch": true,
     "baseUrl": "./",
     "paths": {
       "@core/*": ["src/app/core/*"],
@@ -15,7 +16,7 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -31,7 +32,9 @@
     ]
   },
   "angularCompilerOptions": {
+    "watch": true,
     "enableI18nLegacyMessageIdFormat": false,
+    "strictPropertyInitialization": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
