@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +7,7 @@ import { MessageService } from 'primeng/api';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private messageService: MessageService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void { }
 }

@@ -132,3 +132,16 @@ d)error
 We have to match the severity and key with the same option. For example this.messageService.add({severity:'success', key:"success" , summary:'Monkey ', detail:'You look like a monkey :) '});
 
 
+### Logging 
+It's really important to declare the best practices for logging messages.
+In production we can't have messaging with console.log() due to the messaging is disabled. 
+As an alternative we use [NGX Logger](https://www.npmjs.com/package/ngx-logger)
+To use ngx-logger you have to inject it in constructor as a usuall service and next we use .
+An example to be more clearly we inject it in constructor 
+>  constructor(private logger: NGXLogger) {}
+
+And in our method we use it like
+>  logger.error("My message")
+
+
+

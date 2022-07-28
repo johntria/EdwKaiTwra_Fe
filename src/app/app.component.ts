@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@core/services/auth.service';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -8,11 +7,11 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private primengConfig: PrimeNGConfig, public authService: AuthService) {
+  constructor(private primengConfig: PrimeNGConfig) {
+    this.primengConfig.ripple = true;
   }
 
   ngOnInit() {
     this.primengConfig.ripple = true;
-
   }
 }

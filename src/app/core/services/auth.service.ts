@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Tokens } from '@core/models/tokens';
 import { environment } from '@environment/environment.local';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { UserService } from './user.service';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class AuthService {
   private apiUrl = environment.baseUrl;
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this._isLoggedIn$.asObservable();
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private userService: UserService) {
     this._isLoggedIn$.next(!!this.getAccessToken());
   }
 
@@ -23,14 +24,17 @@ export class AuthService {
 
   logout() {
     this.removeTokens();
+    this.userService.removeUserLocalStorage();
   }
 
   refreshToken() {
-    return this.http.post<any>(this.apiUrl + `/open/auth/token/refresh`, {
-      'refreshToken': this.getRefreshToken()
-    });
-  }
+    const header = {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${this.getRefreshToken()}`)
+    }
+    return this.http.get<any>(this.apiUrl + `/open/auth/token/refresh`, header);
 
+  }
 
   getAccessToken() {
     return localStorage.getItem("access_token");
@@ -44,13 +48,14 @@ export class AuthService {
     this._isLoggedIn$.next(true);
     localStorage.setItem("access_token", tokens.access_token);
     localStorage.setItem("refresh_token", tokens.refresh_token);
-    
+    this.userService.refreshUser();
   }
 
   removeTokens() {
     this._isLoggedIn$.next(false);
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
+
   }
 
 
