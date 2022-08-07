@@ -1,0 +1,13 @@
+// @import "";
+.custom-scrolltop {
+    transform: scale(1) !important;
+    background-color: var(--my-var) !important;
+    // width: $mobile !important;
+}
+
+// @media (max-width: $mobile) {
+//     .custom-scrolltop {
+//         background-color: red !important;
+//         transform: scale(0.75) !important;
+//     }
+// }
