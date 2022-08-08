@@ -1,2 +1,9 @@
 //Breakpoints for all devices
-$breakpoints: (mobile, tablet, sm-screen, m-screen, l-screen, xl-screen);
+$breakpoints: (
+    mobile: 30em,
+    tablet: 64em,
+    sm-screen: 82em,
+    m-screen: 120em,
+    l-screen: 140em,
+    xl-screen: 160em,
+);
