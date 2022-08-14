@@ -1,19 +1,19 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AuthInterceptor } from '@core/interceptors/auth.interceptor';
 import { LoggerModule, NgxLoggerLevel } from "ngx-logger";
-import { HttpClientModule } from "@angular/common/http";
+import { MessageService } from 'primeng/api';
+import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { CoreModule } from './core/core.module';
-import { MessageService } from 'primeng/api';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -21,9 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     LoggerModule.forRoot({
-      serverLoggingUrl: '/api/logs',
+      // serverLoggingUrl: '/api/logs',
       level: NgxLoggerLevel.DEBUG,
-      serverLogLevel: NgxLoggerLevel.ERROR
+      // serverLogLevel: NgxLoggerLevel.ERROR
     }),
     SharedModule,
     CoreModule
@@ -34,7 +34,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [
     MessageService,
-
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
