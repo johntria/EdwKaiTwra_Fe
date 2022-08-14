@@ -1,0 +1,7 @@
+@use "breakpoints";
+
+@mixin device($variable) {
+    @media screen and (max-width: map-get(breakpoints.$breakpoints, $variable)) {
+        @content;
+    }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Tokens } from '@core/models/tokens';
 import { AuthService } from '@core/services/auth.service';
 import { UserService } from '@core/services/user.service';
@@ -12,7 +13,7 @@ import { MessageService } from 'primeng/api';
 })
 export class LoginComponent implements OnInit {
   form!: UntypedFormGroup;
-  constructor(private authService: AuthService, private userService: UserService, private messageService: MessageService) { }
+  constructor(private authService: AuthService, private userService: UserService, private messageService: MessageService, private router: Router) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -31,8 +32,7 @@ export class LoginComponent implements OnInit {
       next: (tokens: Tokens) => {
         this.authService.storeTokens(tokens);
         this.messageService.add({ severity: 'success', key: "success", summary: 'Συνδεθήκατε με επιτυχία ' });
-        
-
+        this.router.navigate(['home']);
       },
       error: (err) => {
         this.messageService.add({ severity: 'error', key: "error", summary: 'Ανεπιτυχής Σύνδεση', detail: err.error.message });

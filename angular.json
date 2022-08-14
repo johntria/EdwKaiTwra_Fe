@@ -39,6 +39,11 @@
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/shared/styles/sass-utils"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

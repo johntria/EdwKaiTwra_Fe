@@ -1,4 +1,4 @@
-# SASS GUIDELINES 
+# SASS GUIDELINES & Project Structure
  Before you write a line of code in styles I highly recommend read this [article](https://sass-guidelin.es/el/)
 </br>
  Before you write a line of code in Angular I highly recommend read this [article](https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d) due to understand our project structure 
@@ -96,7 +96,7 @@ Files should be imported according to the folder they live in, one after the oth
 6. `pages/`
 
 
-### Toast Messages
+# Toast Messages
 We implemented the toast messages with [NgPrime Toast](https://www.primefaces.org/primeng/toast).
 
 
@@ -132,7 +132,7 @@ d)error
 We have to match the severity and key with the same option. For example this.messageService.add({severity:'success', key:"success" , summary:'Monkey ', detail:'You look like a monkey :) '});
 
 
-### Logging 
+# Logging 
 It's really important to declare the best practices for logging messages.
 In production we can't have messaging with console.log() due to the messaging is disabled. 
 As an alternative we use [NGX Logger](https://www.npmjs.com/package/ngx-logger)
@@ -142,6 +142,30 @@ An example to be more clearly we inject it in constructor
 
 And in our method we use it like
 >  logger.error("My message")
+
+
+# Media Querys
+Created dynamic mode for media queries to reduce Boilerplate code.
+As you can see at [Breakpoints](/src/app/shared/styles/sass-utils/_breakpoints.scss)  we added some breakpoints according to the devices used today.
+To use this function you must:
+1. use "media";  In your scss file
+2. In you selector which you want to implement your own functinallity(in our case test class)
+```
+use "media";
+.test {
+    @include media.device(sm-screen) {
+        border: 30px solid black;
+    }
+    @include media.device(tablet) {
+        border: 30px solid blue;
+    }
+
+    @include media.device(mobile) {
+        border: 30px solid purple;
+    }
+}
+```
+The reason which implemented that functionallity of media querys correspond to the need of configurables devices. 
 
 
 

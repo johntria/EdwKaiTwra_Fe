@@ -26,7 +26,9 @@ export class AuthService {
     this.removeTokens();
     this.userService.removeUserLocalStorage();
   }
-
+  get isLoggedIn() {
+    return this._isLoggedIn$.value;
+  }
   refreshToken() {
     const header = {
       headers: new HttpHeaders()
