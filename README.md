@@ -148,10 +148,10 @@ And in our method we use it like
 Created dynamic mode for media queries to reduce Boilerplate code.
 As you can see at [Breakpoints](/src/app/shared/styles/sass-utils/_breakpoints.scss)  we added some breakpoints according to the devices used today.
 To use this function you must:
-1. use "media";  In your scss file
+1. @use "media";  In your scss file
 2. In you selector which you want to implement your own functinallity(in our case test class)
 ```
-use "media";
+@use "media";
 .test {
     @include media.device(sm-screen) {
         border: 30px solid black;
