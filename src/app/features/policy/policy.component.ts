@@ -10,18 +10,10 @@ export class PolicyComponent implements OnInit {
   isVisible: boolean = false;
   detailsVisibility: boolean = false;
 
-  options: Option[] = [
-    { name: 'Cookies', code: 'cookies' },
-    { name: 'Πληροφορίες', code: 'about' }
-  ]
-  selectedOption: Option = this.options[0];
-  cookiesOptions: Option[] = [
-    { name: 'Απαραίτητα', code: 'core' },
-    { name: 'Προτίμησεις', code: 'about' },
-    { name: 'Στατιστικά', code: 'statistics' },
-    { name: 'Marketing', code: 'marketing' }
-  ]
-  selectedCookiesOption: Option = this.cookiesOptions[0];
+  options!: Option[];
+  selectedOption!: Option;
+  cookiesOptions!: Option[];
+  selectedCookiesOption!: Option;
 
   constructor() { }
 
@@ -31,14 +23,27 @@ export class PolicyComponent implements OnInit {
 
   initialize() {
     if (this.declareVisibility()) {
-
+      setTimeout(() => {
+        this.options = [
+          { name: 'Cookies', code: 'cookies' },
+          { name: 'Πληροφορίες', code: 'about' }
+        ];
+        this.selectedOption = this.options[0];
+        this.cookiesOptions = [
+          { name: 'Απαραίτητα', code: 'core' },
+          { name: 'Προτίμησεις', code: 'about' },
+          { name: 'Στατιστικά', code: 'statistics' },
+          { name: 'Marketing', code: 'marketing' }
+        ]
+        this.selectedCookiesOption = this.cookiesOptions[0];
+        this.isVisible = true;
+      }, 15000);
     }
-    setTimeout(() => {
-      this.isVisible = true;
-    }, 2000);
+
   }
 
   aggreed() {
+    localStorage.setItem("policy", "true")
     this.isVisible = !this.isVisible;
   }
 
@@ -50,13 +55,22 @@ export class PolicyComponent implements OnInit {
     this.selectedOption = selection;
   }
 
-  onChangeOption(event: Option ) {
+  onChangeOption(event: Option) {
     if (event != null)
       this.selectedCookiesOption = event;
 
   }
 
+  /** 
+   * We declare the visibility of component.
+   * If the policy item in local storage exist we hide component else we continue
+   * @returns boolean
+   */
   declareVisibility(): boolean {
+    let cookie = localStorage.getItem("policy")
+    if (cookie)
+      return false;
+
     return true;
   }
 
