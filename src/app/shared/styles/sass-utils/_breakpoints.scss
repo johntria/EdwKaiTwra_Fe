@@ -1,9 +1,9 @@
 //Breakpoints for all devices
 $breakpoints: (
-    mobile: 30em,
-    tablet: 64em,
-    sm-screen: 82em,
-    m-screen: 120em,
-    l-screen: 140em,
-    xl-screen: 160em,
+    mobile: var(--mobile),
+    tablet: var(--tablet),
+    sm-screen: var(--sm-screen),
+    m-screen: var(--m-screen),
+    l-screen: var(--l-screen),
+    xl-screen: var(--xl-screen),
 );

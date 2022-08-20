@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AuthInterceptor } from '@core/interceptors/auth.interceptor';
+import { PolicyModule } from "@features/policy/policy.module";
 import { LoggerModule, NgxLoggerLevel } from "ngx-logger";
 import { MessageService } from 'primeng/api';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
@@ -26,6 +27,7 @@ import { CoreModule } from './core/core.module';
       // serverLogLevel: NgxLoggerLevel.ERROR
     }),
     SharedModule,
+    PolicyModule,
     CoreModule
   ],
   exports: [

@@ -1,0 +1,116 @@
+@use "media";
+.custom-sidebar {
+    .p-sidebar {
+        background-color: var(--black);
+        display: block;
+        height: auto;
+
+        .content {
+            max-width: var(--sm-screen);
+            margin-inline: auto;
+            .caption {
+                text-align: center;
+                color: var(--white);
+                font-weight: 600;
+            }
+            .flex-container {
+                color: var(--white);
+                display: flex;
+                margin-top: 1em;
+                justify-content: space-between;
+                align-items: baseline;
+                strong {
+                    font-weight: 300;
+                    text-decoration: underline;
+                    user-select: none;
+                }
+                strong:hover {
+                    cursor: pointer;
+                }
+            }
+            .show-more-list {
+                margin: 0 2em;
+                .selection {
+                    ul {
+                        //reset default styles of ul
+                        all: unset;
+                        display: flex;
+                        gap: 1.5em;
+                        list-style-type: none;
+                        li:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    li:hover {
+                        color: var(--white);
+                    }
+                    ul {
+                        border-bottom: 4px solid #383838;
+                        width: 100%;
+                        margin: 0px;
+                        li {
+                            margin: 0.5em 1em;
+
+                            font-weight: bold;
+                        }
+                        .selected-option {
+                            position: relative;
+                            color: var(--white);
+                            font-weight: bold;
+                        }
+                        .selected-option:after {
+                            content: " ";
+                            position: absolute;
+                            top: 0px;
+                            left: -15px;
+                            right: -15px;
+                            bottom: -11px;
+                            border-bottom: 5px solid white;
+                        }
+                    }
+                }
+                .cookies {
+                    display: flex;
+                    align-items: center;
+                    .custom-list-box {
+                        .p-listbox-list-wrapper {
+                            font-size: clamp(0.625rem, 0.1563rem + 1.5vw, 1rem);
+                        }
+                        .p-listbox .p-listbox-list .p-listbox-item:focus {
+                            box-shadow: none;
+                        }
+
+                        .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
+                            background-color: var(--black);
+                            color: var(--white);
+                        }
+                        .p-listbox .p-listbox-list .p-listbox-item.p-highlight {
+                            background-color: var(--black);
+                            color: var(--white);
+                        }
+                        .p-listbox {
+                            border: none;
+                            background-color: var(--black);
+                            color: var(--white);
+                            max-width: 200px;
+                        }
+                    }
+                    .max-width {
+                        color: var(--white);
+                        height: 300px;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                    }
+                }
+
+                .about {
+                    color: var(--white);
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}

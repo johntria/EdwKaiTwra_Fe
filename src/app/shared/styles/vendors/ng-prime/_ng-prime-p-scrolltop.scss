@@ -1,5 +1,14 @@
-// @import "";
+@use "media";
 .custom-scrolltop {
-    transform: scale(1) !important;
-    // width: $mobile !important;
+    .p-scrolltop {
+        @include media.device(sm-screen) {
+            scale: 1;
+        }
+        @include media.device(tablet) {
+            scale: 0.75;
+        }
+        @include media.device(mobile) {
+            scale: 0.65;
+        }
+    }
 }
