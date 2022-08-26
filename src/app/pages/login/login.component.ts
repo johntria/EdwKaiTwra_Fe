@@ -13,6 +13,7 @@ import { MessageService } from 'primeng/api';
 })
 export class LoginComponent implements OnInit {
   form!: UntypedFormGroup;
+  isDisabled: boolean = false;
   constructor(private authService: AuthService, private userService: UserService, private messageService: MessageService, private router: Router) { }
 
   ngOnInit(): void {
@@ -22,12 +23,13 @@ export class LoginComponent implements OnInit {
 
   initializeForm() {
     this.form = new UntypedFormGroup({
-      email: new UntypedFormControl(''),
-      password: new UntypedFormControl('')
+      email: new UntypedFormControl(),
+      password: new UntypedFormControl()
     });
   }
 
   submitForm() {
+    this.isDisabled = true;
     this.authService.login(this.form.value).subscribe({
       next: (tokens: Tokens) => {
         this.authService.storeTokens(tokens);
@@ -36,9 +38,11 @@ export class LoginComponent implements OnInit {
       },
       error: (err) => {
         this.messageService.add({ severity: 'error', key: "error", summary: 'Ανεπιτυχής Σύνδεση', detail: err.error.message });
+        this.form.reset();
+      },
+      complete: () => {
+        this.isDisabled = false;
       }
     })
   }
-
-
 }

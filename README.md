@@ -143,7 +143,6 @@ An example to be more clearly we inject it in constructor
 And in our method we use it like
 >  logger.error("My message")
 
-
 # Media Querys
 Created dynamic mode for media queries to reduce Boilerplate code.
 As you can see at [Breakpoints](/src/app/shared/styles/sass-utils/_breakpoints.scss)  we added some breakpoints according to the devices used today.
@@ -153,17 +152,18 @@ To use this function you must:
 ```
 @use "media";
 .test {
-    @include media.device(sm-screen) {
+    @include media.device("sm-screen") {
         border: 30px solid black;
     }
-    @include media.device(tablet) {
+    @include media.device("tablet") {
         border: 30px solid blue;
     }
 
-    @include media.device(mobile) {
+    @include media.device("mobile") {
         border: 30px solid purple;
     }
 }
+
 ```
 The reason which implemented that functionallity of media querys correspond to the need of configurables devices. 
 

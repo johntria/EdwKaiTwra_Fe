@@ -1,0 +1,31 @@
+@use "../breakpoints" as breakpoints;
+@use "../_functions.scss" as fcn;
+
+@mixin from($variable) {
+    @if (fcn.corellatedVariable($variable)) {
+        @media (min-width: map-get(breakpoints.$breakpoints,$variable)) {
+            @content;
+        }
+    }
+}
+
+@mixin until($variable) {
+    @if (fcn.corellatedVariable($variable)) {
+        @media (max-width: map-get(breakpoints.$breakpoints,$variable)) {
+            @content;
+        }
+    }
+}
+@mixin from-until($min, $max) {
+    @if (fcn.corellatedVariable($min, $max)) {
+        @media (min-width: map-get(breakpoints.$breakpoints,$min)) and (max-width: map-get(breakpoints.$breakpoints,$max)) {
+            @content;
+        }
+    }
+}
+
+@mixin from-until-unit($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}

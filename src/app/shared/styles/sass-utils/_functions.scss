@@ -1,0 +1,11 @@
+@use "breakpoints" as breakpoints;
+
+@function corellatedVariable($variable...) {
+    @each $var in $variable {
+        @if not map-has-key(breakpoints.$breakpoints, $var) {
+            @error "You made a mistake/M A L A K I A, `#{$var}` can not be found. "+
+            "Available breakpoints are: #{map-keys(breakpoints.$breakpoints)}";
+        }
+    }
+    @return true;
+}
