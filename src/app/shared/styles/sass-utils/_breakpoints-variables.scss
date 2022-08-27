@@ -1,9 +1,16 @@
+$mobile: 30em;
+$tablet: 64em;
+$sm-screen: 82em;
+$m-screen: 120em;
+$l-screen: 140em;
+$xl-screen: 160em;
+
 :root {
     //Main breakpoints variables
-    --mobile: 30em;
-    --tablet: 64em;
-    --sm-screen: 82em;
-    --m-screen: 120em;
-    --l-screen: 140em;
-    --xl-screen: 160em;
+    --mobile: #{$mobile};
+    --tablet: #{$tablet};
+    --sm-screen: #{$sm-screen};
+    --m-screen: #{$m-screen};
+    --l-screen: #{$l-screen};
+    --xl-screen: #{$xl-screen};
 }

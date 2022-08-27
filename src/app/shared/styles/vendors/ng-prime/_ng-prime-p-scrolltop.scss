@@ -1,14 +1,14 @@
 @use "media";
 .custom-scrolltop {
-    .p-scrolltop {
-        @include media.device(sm-screen) {
-            scale: 1;
-        }
-        @include media.device(tablet) {
+    .p-scrolltop.p-link {
+        background-color: var(--ligt-blue);
+    }
+    .p-scrolltop.p-link:hover {
+        background-color: var(--dark-blue);
+    }
+    @include media.until(tablet) {
+        .p-scrolltop.p-link {
             scale: 0.75;
-        }
-        @include media.device(mobile) {
-            scale: 0.65;
         }
     }
 }

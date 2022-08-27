@@ -1,9 +1,11 @@
+@use "breakpoints-variables" as var;
+
 //Breakpoints for all devices
 $breakpoints: (
-    mobile: var(--mobile),
-    tablet: var(--tablet),
-    sm-screen: var(--sm-screen),
-    m-screen: var(--m-screen),
-    l-screen: var(--l-screen),
-    xl-screen: var(--xl-screen),
-);
+    "mobile": var.$mobile,
+    "tablet": var.$tablet,
+    "sm-screen": var.$sm-screen,
+    "m-screen": var.$sm-screen,
+    "l-screen": var.$l-screen,
+    "xl-screen": var.$xl-screen,
+) !default;

@@ -1,9 +1,22 @@
-<form *ngIf="this.form" [formGroup]="form" (ngSubmit)="submitForm()">
-    <label>E-mail</label>
-    <input type="email" formControlName="email" email required>
+<div class="flex-container">
+    <div class="logo">
 
-    <label>Password</label>
-    <input type="password" formControlName="password" required>
+    </div>
+    <form class="soft-boxshadow" *ngIf="this.form" [formGroup]="form" (ngSubmit)="submitForm()">
 
-    <button type="submit" [disabled]="!form.valid">Login</button>
-</form>
+        <span class="p-float-label">
+            <input id="float-input" type="email" pInputText formControlName="email" email required>
+            <label for="float-input">Email</label>
+        </span>
+
+        <span class="p-float-label">
+            <input id="float" type="password" pInputText formControlName="password" required>
+            <label for="float-input">Κωδικός</label>
+        </span>
+
+        <div class="buttons">
+            <button [disabled]=" isDisabled || !form.valid" pButton type="submit">Σύνδεση</button>
+        </div>
+
+    </form>
+</div>

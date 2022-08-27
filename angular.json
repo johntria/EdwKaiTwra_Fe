@@ -41,7 +41,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/app/shared/styles/sass-utils"
+                "src/app/shared/styles/sass-utils/media"
               ]
             },
             "scripts": []
