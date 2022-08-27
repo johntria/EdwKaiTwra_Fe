@@ -1,5 +1,5 @@
 <div class="flex-container">
-    <div class="logo">
+    <div class="logo" [routerLink]="['/home']">
 
     </div>
     <form class="soft-boxshadow" *ngIf="this.form" [formGroup]="form" (ngSubmit)="submitForm()">
