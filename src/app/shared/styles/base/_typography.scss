@@ -5,3 +5,43 @@
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+
+:root {
+    --size--2: clamp(0.87rem, calc(0.83rem + 0.18vw), 0.96rem);
+    --size--1: clamp(1.04rem, calc(0.98rem + 0.31vw), 1.2rem);
+    --size-0: clamp(1.25rem, calc(1.15rem + 0.49vw), 1.5rem);
+    --size-1: clamp(1.4rem, calc(1.25rem + 0.63vw), 1.73rem);
+    --size-2: clamp(1.55rem, calc(1.35rem + 0.77vw), 1.91rem);
+    --size-3: clamp(1.7rem, calc(1.45rem + 0.91vw), 2.14rem);
+    --size-4: clamp(1.85rem, calc(1.55rem + 1.05vw), 2.35rem);
+    --size-5: clamp(2rem, calc(1.7rem + 1.2vw), 2.56rem);
+    --size-6: clamp(2.16rem, calc(1.86rem + 1.5vw), 2.93rem);
+}
+
+h1 {
+    font-size: var(--size-6);
+}
+h2 {
+    font-size: var(--size-5);
+}
+h3 {
+    font-size: var(--size-4);
+}
+h4 {
+    font-size: var(--size-3);
+}
+h5 {
+    font-size: var(--size-2);
+}
+h6 {
+    font-size: var(--size-1);
+}
+p {
+    font-size: var(--size-0);
+}
+div {
+    font-size: var(--size-0);
+}
+small {
+    font-size: var(--size--1);
+}

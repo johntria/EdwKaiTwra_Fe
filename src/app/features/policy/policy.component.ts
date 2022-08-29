@@ -37,7 +37,7 @@ export class PolicyComponent implements OnInit {
         ]
         this.selectedCookiesOption = this.cookiesOptions[0];
         this.isVisible = true;
-      }, 15000);
+      }, 1000);
     }
 
   }
