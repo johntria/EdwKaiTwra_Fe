@@ -19,6 +19,11 @@
         height: 100px;
         background-image: url("../../../assets/logo/logo.svg");
         background-repeat: no-repeat;
+        transition: transform 0.4s;
+    }
+    .logo:hover {
+        cursor: pointer;
+        transform: scale(1.1);
     }
     form {
         display: flex;

@@ -1,3 +1,4 @@
+@use "media";
 .custom-sidebar {
     .p-sidebar {
         background-color: var(--black);
@@ -8,9 +9,18 @@
             max-width: var(--sm-screen);
             margin-inline: auto;
             .caption {
+                overflow-x: hidden;
+                overflow-y: auto;
+                max-height: 300px;
+                font-weight: 400;
+                font-size: var(--size-0);
                 text-align: center;
                 color: var(--white);
-                font-weight: 600;
+            }
+            @include media.until(tablet) {
+                .caption {
+                    font-size: var(--size--1);
+                }
             }
             .flex-container {
                 color: var(--white);
@@ -19,6 +29,7 @@
                 justify-content: space-between;
                 align-items: baseline;
                 strong {
+                    font-size: var(--size--2);
                     font-weight: 300;
                     text-decoration: underline;
                     user-select: none;
@@ -26,9 +37,12 @@
                 strong:hover {
                     cursor: pointer;
                 }
+                button {
+                    font-size: var(--size-0);
+                }
             }
+
             .show-more-list {
-                margin: 0 2em;
                 .selection {
                     ul {
                         //reset default styles of ul
@@ -36,42 +50,31 @@
                         display: flex;
                         gap: 1.5em;
                         list-style-type: none;
+                        border-bottom: 4px solid #383838;
+                        width: 100%;
+                        margin: 0;
+                        padding: 0.4rem 0;
+                        li {
+                            position: relative;
+                            bottom: -11px;
+                            font-weight: bold;
+                            padding: 0.4rem 0;
+                        }
                         li:hover {
                             cursor: pointer;
                         }
-                    }
-
-                    li:hover {
-                        color: var(--white);
-                    }
-                    ul {
-                        border-bottom: 4px solid #383838;
-                        width: 100%;
-                        margin: 0px;
-                        li {
-                            margin: 0.5em 1em;
-
-                            font-weight: bold;
-                        }
                         .selected-option {
-                            position: relative;
                             color: var(--white);
+                            border-bottom: 4px solid white;
                             font-weight: bold;
-                        }
-                        .selected-option:after {
-                            content: " ";
-                            position: absolute;
-                            top: 0px;
-                            left: -15px;
-                            right: -15px;
-                            bottom: -11px;
-                            border-bottom: 5px solid white;
                         }
                     }
                 }
                 .cookies {
+                    height: 300px;
                     display: flex;
                     align-items: center;
+                    padding-top: 1em;
                     .custom-list-box {
                         .p-listbox-list-wrapper {
                             font-size: clamp(0.625rem, 0.1563rem + 1.5vw, 1rem);
@@ -104,6 +107,7 @@
                 }
 
                 .about {
+                    padding-top: 1em;
                     color: var(--white);
                     overflow-x: hidden;
                     overflow-y: auto;
