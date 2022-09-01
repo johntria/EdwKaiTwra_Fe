@@ -1,0 +1,16 @@
+*::-webkit-scrollbar {
+    width: 6px;
+    min-height: 200px;
+}
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--dark-blue) var(--scroll-bg);
+}
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px var(--scroll-bg);
+}
+*::-webkit-scrollbar-thumb {
+    min-height: 150px; //for vertical scrollbar
+    background-color: var(--dark-blue);
+    border-radius: 6px;
+}
