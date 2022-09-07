@@ -38,7 +38,6 @@ export class ThemeService {
       this.document.body.style.background = "var(--light-mode-bg-color)"
     }
     let currentTheme = this.document.getElementById('app-theme') as HTMLLinkElement;
-    console.log(theme)
     currentTheme.href = theme + '.css';
   }
 }

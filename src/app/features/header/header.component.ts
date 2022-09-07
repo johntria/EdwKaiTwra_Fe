@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   }
 
   changeTheme(theme: string) {
-    console.log(theme);
     this.themeService.setCurrentTheme(theme);
   }
 }
