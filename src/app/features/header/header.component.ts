@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '@core/services/theme.service';
 import { MenuItem } from 'primeng/api';
 
 
@@ -10,7 +11,7 @@ import { MenuItem } from 'primeng/api';
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
     this.items = [
@@ -18,5 +19,10 @@ export class HeaderComponent implements OnInit {
       { label: 'Open', icon: 'pi pi-fw pi-download' },
       { label: 'Undo', icon: 'pi pi-fw pi-refresh' }
     ];
+  }
+
+  changeTheme(theme: string) {
+    console.log(theme);
+    this.themeService.setCurrentTheme(theme);
   }
 }

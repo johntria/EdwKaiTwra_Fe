@@ -1,3 +1,8 @@
 <header>TEST
-    <p-menu [model]="items"></p-menu>
+    <!-- <p-menu [model]="items"></p-menu> -->
+    <button pButton pRipple type="button" icon="pi pi-moon" class="p-button-rounded p-button-text"
+        (click)="changeTheme('light-blue')"></button>
+    <button pButton pRipple type="button" icon="pi pi-sun" class="p-button-rounded p-button-text"
+        (click)="changeTheme('dark-blue')"></button>
+    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-text"></button>
 </header>

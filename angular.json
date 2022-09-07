@@ -36,7 +36,17 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+            
+              {
+                "input":"node_modules/primeng/resources/themes/bootstrap4-dark-blue/theme.css",
+                "bundleName": "dark-blue",
+                "inject": false
+              },
+              {
+                "input": "node_modules/primeng/resources/themes/bootstrap4-light-blue/theme.css",
+                "bundleName": "light-blue",
+                "inject": false
+              },
               "node_modules/primeng/resources/primeng.min.css"
             ],
             "stylePreprocessorOptions": {

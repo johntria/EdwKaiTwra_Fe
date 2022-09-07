@@ -1,0 +1,14 @@
+.toggle-button-remove-bg-styles {
+    .p-togglebutton.p-button {
+        background: none;
+        border: none;
+    }
+    .p-togglebutton.p-button:not(.p-disabled):not(.p-highlight):hover {
+        background: none;
+        border: none;
+    }
+    .p-togglebutton.p-button.p-highlight:hover {
+        background: none;
+        border: none;
+    }
+}
