@@ -1,22 +1,21 @@
 <div class="flex-container">
-    <div class="logo" [routerLink]="['/home']">
-
-    </div>
-    <form class="soft-boxshadow" *ngIf="this.form" [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="logo" [routerLink]="['/home']">
+  </div>
+  <form class="soft-boxshadow" *ngIf="this.form" [formGroup]="form" (ngSubmit)="submitForm()">
 
         <span class="p-float-label">
             <input id="float-input" type="email" pInputText formControlName="email" email required>
             <label for="float-input">Email</label>
         </span>
 
-        <span class="p-float-label">
-            <input id="float" type="password" pInputText formControlName="password" required>
+    <span class="p-float-label">
+            <input id="float" type="password" pInputText formControlName="password" autocomplete="on" required>
             <label for="float-input">Κωδικός</label>
         </span>
 
-        <div class="buttons">
-            <button [disabled]=" isDisabled || !form.valid" pButton type="submit">Σύνδεση</button>
-        </div>
+    <div class="buttons">
+      <button [disabled]="!form.valid" label="Σύνδεση" [loading]="isLoading" pButton type="submit"></button>
+    </div>
 
-    </form>
+  </form>
 </div>

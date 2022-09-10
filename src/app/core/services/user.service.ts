@@ -4,7 +4,6 @@ import { User } from '@core/models/user';
 import { environment } from '@environment/environment.local';
 import { NGXLogger } from 'ngx-logger';
 import { BehaviorSubject } from 'rxjs';
-import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class UserService {
   private _currentUser$ = new BehaviorSubject<User | boolean>(false);
   currentUser$ = this._currentUser$.asObservable();
 
-  constructor(private authService: AuthService, private http: HttpClient, private logger: NGXLogger) {
+  constructor(private http: HttpClient, private logger: NGXLogger) {
     this.initializeUser();
   }
 

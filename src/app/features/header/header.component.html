@@ -1,8 +1,9 @@
 <header>TEST
     <!-- <p-menu [model]="items"></p-menu> -->
+
     <button pButton pRipple type="button" icon="pi pi-moon" class="p-button-rounded p-button-text"
-        (click)="changeTheme('light-blue')"></button>
+        (click)="changeTheme('light-blue')" *ngIf="currentTheme=='dark-blue'"></button>
     <button pButton pRipple type="button" icon="pi pi-sun" class="p-button-rounded p-button-text"
-        (click)="changeTheme('dark-blue')"></button>
+        (click)="changeTheme('dark-blue')" *ngIf="currentTheme=='light-blue'"></button>
     <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-text"></button>
 </header>

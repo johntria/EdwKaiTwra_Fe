@@ -1,11 +1,13 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import {DOCUMENT} from '@angular/common';
+import {Inject, Injectable} from '@angular/core';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document) {
+  }
 
   initTheme() {
     let currentTheme = this.getCurrentTheme();
@@ -17,10 +19,8 @@ export class ThemeService {
     if (!!theme) {
       return theme;
     }
-
     let defaultTheme = this.document.getElementById('app-theme') as HTMLLinkElement;
-    return defaultTheme.href.replace('.css', '');
-
+    return defaultTheme.href.includes('dark-blue.css') ? "dark-blue" : "light-blue";
   }
 
   setCurrentTheme(theme: string) {

@@ -1,43 +1,46 @@
 .flex-container {
-    height: 100vh;
-    min-height: 100%;
+  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../../assets/svg/login-svg.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+
+  .logo {
+    width: 90%;
+    height: 100px;
+    background: url(../../../assets/logo/logo.svg) no-repeat center ;
+    transition: transform 0.4s;
+  }
+
+  .logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  form {
     display: flex;
     flex-direction: column;
-    gap: 2em;
     align-items: center;
     justify-content: center;
-    background-image: url("../../../assets/svg/login-svg.svg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
+    padding: 5em;
+    width: 90%;
+    max-width: 450px;
 
-    .logo {
-        width: 300px;
-        height: 100px;
-        background-image: url("../../../assets/logo/logo.svg");
-        background-repeat: no-repeat;
-        transition: transform 0.4s;
+    span {
+      margin: 1em;
     }
-    .logo:hover {
-        cursor: pointer;
-        transform: scale(1.1);
+
+    button[type="submit"] {
+      margin-top: 3em;
     }
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 5em;
-        width: 90%;
-        max-width: 450px;
-        span {
-            margin: 1em;
-        }
-        button[type="submit"] {
-            margin-top: 3em;
-        }
-    }
+  }
 }

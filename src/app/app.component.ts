@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '@core/services/theme.service';
-import { PrimeNGConfig } from 'primeng/api';
+import {Component, OnInit} from '@angular/core';
+import {ThemeService} from '@core/services/theme.service';
+import {PrimeNGConfig} from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,13 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private primengConfig: PrimeNGConfig, private themeService: ThemeService) { }
-  ngOnInit() {
-    this.primengConfig.ripple = true;
+  constructor(private primengConfig: PrimeNGConfig, private themeService: ThemeService) {
     this.themeService.initTheme();
+  }
+
+  ngOnInit() {
+    this.themeService.initTheme();
+    this.primengConfig.ripple = true;
+
   }
 }

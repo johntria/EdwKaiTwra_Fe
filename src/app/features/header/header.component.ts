@@ -10,7 +10,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
-
+  currentTheme!:string;
   constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
@@ -19,9 +19,15 @@ export class HeaderComponent implements OnInit {
       { label: 'Open', icon: 'pi pi-fw pi-download' },
       { label: 'Undo', icon: 'pi pi-fw pi-refresh' }
     ];
+    this.currentTheme= this.getTheme();
+  }
+
+  getTheme(){
+    return this.themeService.getCurrentTheme();
   }
 
   changeTheme(theme: string) {
     this.themeService.setCurrentTheme(theme);
+    this.currentTheme=theme;
   }
 }
