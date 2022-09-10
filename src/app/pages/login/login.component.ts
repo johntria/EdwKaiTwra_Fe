@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       },
       error: (err) => {
-        this.messageService.add({ severity: 'error', key: "error", summary: 'Ανεπιτυχής Σύνδεση', detail: err.error.message });
+        this.messageService.add({ severity: 'error', summary: 'Ανεπιτυχής Σύνδεση', detail: err.error.message });
         this.form.reset();
       },
     })
