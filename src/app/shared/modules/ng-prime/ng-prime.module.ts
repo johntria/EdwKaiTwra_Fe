@@ -13,16 +13,16 @@ import {ScrollTopModule} from 'primeng/scrolltop';
 import {SidebarModule} from 'primeng/sidebar';
 import {ToastModule} from 'primeng/toast';
 import {ToggleButtonModule} from 'primeng/togglebutton';
-
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
     declarations: [],
     imports: [
-        CommonModule, ToastModule, MessagesModule, MessageModule, AccordionModule, ScrollTopModule, SidebarModule, ButtonModule, ListboxModule, InputTextModule, PasswordModule, MenuModule, InputSwitchModule, ToggleButtonModule
+        DialogModule,CommonModule, ToastModule, MessagesModule, MessageModule, AccordionModule, ScrollTopModule, SidebarModule, ButtonModule, ListboxModule, InputTextModule, PasswordModule, MenuModule, InputSwitchModule, ToggleButtonModule
 
     ],
     exports: [
-        ToastModule, MessagesModule, MessageModule, AccordionModule, ScrollTopModule, SidebarModule, ButtonModule, ListboxModule, InputTextModule, PasswordModule, MenuModule, InputSwitchModule, ToggleButtonModule
+        DialogModule,ToastModule, MessagesModule, MessageModule, AccordionModule, ScrollTopModule, SidebarModule, ButtonModule, ListboxModule, InputTextModule, PasswordModule, MenuModule, InputSwitchModule, ToggleButtonModule
     ]
 })
 export class NgPrimeModule {

@@ -1,0 +1,11 @@
+<p-dialog [(visible)]="isVisible" [modal]="true" [draggable]="false" [transitionOptions]="'350ms'"
+		  ngClass="search-dialog-header-component"
+		  header="Βρές ότι θέλεις εύκολα και γρήγορα 📰📰️"
+		  [modal]="true">
+		<span class="search-container">
+			<input [disabled]="searchSubmitted" autofocus class="search-dialog" placeholder="Αναζήτηση..." type="text" pInputText
+				   [(ngModel)]="inputSearch"/>
+			<button [disabled]="inputSearch.length==0" pButton pRipple type="button" icon='pi pi-search'
+					class="submit-button" [loading]="searchSubmitted" (click)="submitSearch()"></button>
+		</span>
+</p-dialog>

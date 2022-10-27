@@ -1,12 +1,28 @@
-.search-dialog-header-component{
-  .p-dialog .p-dialog-header {
-    border: none;
-
-  }
-
-  .p-dialog{
+@use "media";
+.search-dialog-header-component {
+  .p-dialog {
     width: 80vw;
+    height: auto;
 
   }
+
+
+  .p-dialog-header {
+    display: flex;
+    gap: 1em;
+  }
+
+  .p-dialog-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+  }
+ @include media.until(tablet){
+   .p-dialog{
+     width: 95vw;
+   }
+ }
 
 }

@@ -1,0 +1,26 @@
+@use "media";
+
+.search-container {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+
+  .search-dialog {
+    width: 90%;
+  }
+
+  .submit-button {
+    width: 10%;
+  }
+
+}
+
+@include media.until(tablet) {
+  .search-container{
+    flex-direction: column;
+    :nth-child(n){
+      width: 100%;
+    }
+
+  }
+}
